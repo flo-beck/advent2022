@@ -52,7 +52,7 @@ class Player:
         self.num: int = num
         self.scores = []
         self.total = 0
-        self.shape: Shape = None
+        self.shape: Shape | None = None
 
     def parse_shape(self, letter):
         self.shape = Player.shape_dict[letter]
