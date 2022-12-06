@@ -22,13 +22,10 @@ TEST_CASE = {
 
 
 def find_len_of_buffer_and_marker(input_str: str, marker_len: int) -> int:
-    for i in range(len(input_str)):
-        if i < marker_len - 1:
-            continue
-        else:
-            marker = set(input_str[i - (marker_len - 1): i + 1])
-            if len(marker) == marker_len:
-                return i + 1
+    for i in range(marker_len - 1, len(input_str)):
+        marker = set(input_str[i - (marker_len - 1): i + 1])
+        if len(marker) == marker_len:
+            return i + 1
     raise ValueError(f'No marker of {marker_len} unique consecutive letters found')
 
 
@@ -50,7 +47,7 @@ def part_one(my_input):
 
 
 def part_two(my_input):
-   return find_len_of_buffer_and_marker(my_input, 14)
+    return find_len_of_buffer_and_marker(my_input, 14)
 
 
 if __name__ == '__main__':
