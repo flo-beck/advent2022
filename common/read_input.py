@@ -1,10 +1,15 @@
 from typing import List
 
 
-def read_file_lines(filename):
+def read_file_lines(filename) -> List[str]:
     with open(filename, 'r') as f:
         my_input = [val.strip('\n') for val in f.readlines()]
     return my_input
+
+
+def read_file(filename) -> str:
+    f = open(filename, 'r')
+    return f.read()
 
 
 def read_file_to_list_int(filename):

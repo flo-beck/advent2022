@@ -19,14 +19,14 @@ class Section:
         return f'Section : {self.start} to {self.end} '
 
 
-def parse_sections(line):
+def parse_sections(line: str) -> (Section, Section):
     split = line.split(',')
     return Section(split[0]), Section(split[1])
 
 
-def section_is_covered(sec1, sec2):
+def section_is_covered(sec1: Section, sec2: Section) -> bool:
     # if the entirety of sec2 is covered by sec1
-    return True if sec1.start <= sec2.start <= sec1.end and sec2.end <= sec1.end else False
+    return sec1.start <= sec2.start <= sec1.end and sec2.end <= sec1.end
 
 
 def part_one(my_input):
@@ -37,11 +37,12 @@ def part_one(my_input):
             total += 1
     return total
 
+
 # --------------
 
 
-def sections_overlap(sec1, sec2):
-    return True if (sec1.start <= sec2.start <= sec1.end) or (sec1.start <= sec2.end <= sec1.end) else False
+def sections_overlap(sec1: Section, sec2: Section) -> bool:
+    return (sec1.start <= sec2.start <= sec1.end) or (sec1.start <= sec2.end <= sec1.end)
 
 
 def part_two(my_input):
