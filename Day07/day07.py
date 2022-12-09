@@ -1,4 +1,4 @@
-# https://adventofcode.com/2022/day/6
+# https://adventofcode.com/2022/day/7
 from enum import Enum
 
 from common.read_input import read_file_lines
