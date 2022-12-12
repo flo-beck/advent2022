@@ -66,7 +66,7 @@ class Cpu:
         self.curr_instruction: Instruction | None = None
         self.cycles_per_instruction: int = 0
         self.x_register: int = 1
-        self.signal_strengths = []
+        self.signal_strengths: [int] = []
         self.screen: Screen = Screen()
 
     def end_instruction(self):
